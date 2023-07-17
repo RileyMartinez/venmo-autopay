@@ -1,13 +1,10 @@
 import os
 from venmo import Venmo
 from smtp_client import SmtpClient
-from dotenv import load_dotenv
 from datetime import datetime
 
 def main():
     try:
-        load_dotenv()
-
         venmo = Venmo(os.getenv('VENMO_ACCESS_TOKEN'))
 
         smtp = SmtpClient(
