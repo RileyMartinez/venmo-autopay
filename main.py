@@ -4,6 +4,8 @@ from smtp_client import SmtpClient
 from datetime import datetime
 
 def main():
+    """Main function, all arguments are passed in via environment variables and secrets
+    """
     try:
         venmo = Venmo(os.getenv('VENMO_ACCESS_TOKEN'))
 
