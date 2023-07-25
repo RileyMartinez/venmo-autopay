@@ -2,7 +2,7 @@ name: run venmo-autopay
 
 on:
   schedule:
-    - cron: '0 8 20 * *' # At 08:00 on day-of-month 1.
+    - cron: '0 8 25 * *' # At 08:00 on day-of-month 1.
 
 jobs:
   build:
@@ -37,4 +37,17 @@ jobs:
           SMTP_SUBJECT: ${{ vars.SMTP_SUBJECT }}
           SMTP_TO: ${{ vars.SMTP_TO }}
         run: python main.py
+
+      - name: commit files
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "Keep alive" --allow-empty)
+
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main 
           
