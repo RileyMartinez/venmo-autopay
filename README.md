@@ -8,3 +8,5 @@ Automate Venmo payments on a schedule using GitHub Actions:
   - SMTP client wrapper for sending emails
 - venmo.py
   - Venmo client wrapper for sending payments
+- empty.env
+  - Env template that contains all necessary env variables and secrets
