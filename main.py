@@ -5,7 +5,7 @@ from smtp_client import SmtpClient
 from datetime import datetime
 
 def main():
-    try:
+    try: 
         logging.basicConfig(
             filename='status.log', 
             filemode='a', 
@@ -27,9 +27,9 @@ def main():
             os.getenv('VENMO_FUNDING_SOURCE_ID'))
 
         if success:
-            logger.info(f'Venmo payment successful to Recipient ID: {mask_string(os.getenv("VENMO_TARGET_USER_ID"))}')                 
+            logging.info(f'Venmo payment successful to Recipient ID: {mask_string(os.getenv("VENMO_TARGET_USER_ID"))}')                 
         else:
-            logger.error('Venmo payment failed')
+            logging.error('Venmo payment failed')
 
             smtp.send_email(
                 os.getenv('SMTP_TO'),
@@ -37,7 +37,7 @@ def main():
                 os.getenv('SMTP_BODY'))
 
     except Exception as e:
-        logger.error(f'An exception was thrown')
+        logging.error(f'An exception was thrown')
 
         smtp.send_email(
             os.getenv('SMTP_TO'),
