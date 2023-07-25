@@ -27,11 +27,11 @@ jobs:
           VENMO_ACCESS_TOKEN: ${{ secrets.VENMO_ACCESS_TOKEN }}
           VENMO_FUNDING_SOURCE_ID: ${{ vars.VENMO_FUNDING_SOURCE_ID }}
           VENMO_PAYMENT_AMOUNT: ${{ vars.VENMO_PAYMENT_AMOUNT }}
-          VENMO_PAYMENT_NOTE: ${{ vars.VENMO_PAYMENT_NOTE }}
+          VENMO_PAYMENT_NOTE: ${{ secrets.VENMO_PAYMENT_NOTE }}
           VENMO_TARGET_USER_ID: ${{ vars.VENMO_TARGET_USER_ID }}
           SMTP_USERNAME: ${{ vars.SMTP_USERNAME }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
-          SMTP_BODY: ${{ vars.SMTP_BODY }}
+          SMTP_BODY: ${{ secrets.SMTP_BODY }}
           SMTP_PORT: ${{ vars.SMTP_PORT }}
           SMTP_SERVER: ${{ vars.SMTP_SERVER }}
           SMTP_SUBJECT: ${{ vars.SMTP_SUBJECT }}
