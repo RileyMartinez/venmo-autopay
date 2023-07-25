@@ -25,10 +25,10 @@ def main():
             f'{os.getenv("VENMO_PAYMENT_NOTE")} {datetime.now().strftime("%m/%d/%y")}',
             os.getenv('VENMO_TARGET_USER_ID'),
             os.getenv('VENMO_FUNDING_SOURCE_ID'))
-        
-        logger.info(f'Venmo payment successful to Recipient ID: {mask_string(os.getenv("VENMO_TARGET_USER_ID"))}')
 
-        if not success:
+        if success:
+            logger.info(f'Venmo payment successful to Recipient ID: {mask_string(os.getenv("VENMO_TARGET_USER_ID"))}')                 
+        else:
             logger.error('Venmo payment failed')
 
             smtp.send_email(
