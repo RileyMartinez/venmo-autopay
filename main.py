@@ -7,7 +7,7 @@ from datetime import datetime
 def main():
     try: 
         logging.basicConfig(
-            filename='status.log', 
+            filename='transactions.log', 
             filemode='a', 
             level=logging.DEBUG, 
             format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
