@@ -10,7 +10,7 @@ class Request:
 
     def __str__(self) -> str:
         return (
-            f'Amount: {self.amount}\n'
+            f'Amount: ${self.amount}\n'
             f'Note: {self.note}\n'
             f'Target User ID: {self.target_user_id}'
         )
