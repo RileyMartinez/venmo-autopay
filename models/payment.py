@@ -12,7 +12,8 @@ class Payment:
 
     def __str__(self) -> str:
         return (
-            f'Amount: {self.amount}\n'
-            f'Note: {self.note}\nTarget User ID: {self.target_user_id}\n'
+            f'Amount: ${self.amount}\n'
+            f'Note: {self.note}\n'
+            f'Target User ID: {self.target_user_id}\n'
             f'Funding Source ID: {self.funding_source_id}'
         )

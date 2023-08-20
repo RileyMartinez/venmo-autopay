@@ -1,8 +1,8 @@
 import os
 import traceback
 import logging
+from typing import Union
 from dotenv import load_dotenv
-from enums.TransactionType import TransactionType
 from models.payment import Payment
 from models.request import Request
 from venmo import Venmo
@@ -37,7 +37,7 @@ def main() -> None:
                 payment.target_user_id,
                 payment.funding_source_id)
 
-            log_transaction(smtp, TransactionType.PAYMENT, success, payment.target_user_id)
+            send_transaction_notification(smtp, success, payment.target_user_id)
         
         for request in requests:
             success = venmo.request_money(
@@ -45,7 +45,7 @@ def main() -> None:
                 request.note,
                 request.target_user_id)
 
-            log_transaction(smtp, TransactionType.REQUEST, success, request.target_user_id)
+            send_transaction_notification(smtp, success, request.target_user_id)
 
     except Exception as e:
         logging.error(f'An exception was thrown')
@@ -57,16 +57,25 @@ def send_error_notification(smtp: SmtpClient, e: Exception) -> None:
             os.getenv('SMTP_SUBJECT'),
             f'Failed Transaction\n\nError:\n{e}\n\nDetails:\n{traceback.format_exc()}')
 
-def log_transaction(smtp: SmtpClient, transactionType: TransactionType, success: bool, target_user_id: int) -> None:
-    if success:
-        logging.info(f'Venmo {transactionType.to_lower()} successful to User ID: {mask_string(str(target_user_id))}')                 
-    else:
-        logging.error(f'Venmo {transactionType.to_lower()} failed to User ID: {mask_string(str(target_user_id))}')
+def send_transaction_notification(smtp: SmtpClient, success: bool, transaction: Union[Payment, Request]) -> None:
+    transaction_name: str = transaction.__class__.__name__.lower()
+    log_message: str = f'{success} | Venmo {transaction_name} to User ID: {mask_string(str(transaction.target_user_id))}'
+    email_body: str = f'Venmo {transaction_name} {success}:\n\n{transaction}'
 
+    if success:
+        logging.info(log_message)
         smtp.send_email(
-                    os.getenv('SMTP_TO'),
-                    os.getenv('SMTP_SUBJECT'),
-                    f'Venmo {transactionType.to_lower()} failed to User ID: {target_user_id}')
+            os.getenv('SMTP_TO'),
+            os.getenv('SMTP_SUBJECT'),
+            email_body
+        )                 
+    else:
+        logging.error(log_message)
+        smtp.send_email(
+            os.getenv('SMTP_TO'),
+            os.getenv('SMTP_SUBJECT'),
+            email_body
+        )
 
 def mask_string(s: str) -> str:
     return 'X' * (len(s) - 4) + s[-4:]
