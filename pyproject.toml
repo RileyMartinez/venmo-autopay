@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "venmo-autopay"
+version = "0.1.0"
+description = "Automate Venmo payments on a schedule."
+authors = ["Riley Martinez <riley.m.martinez@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+venmo-api = "^0.3.1"
+requests = "^2.31.0"
+python-dotenv = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
