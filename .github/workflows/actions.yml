@@ -2,7 +2,7 @@ name: run venmo-autopay
 
 on:
   schedule:
-    - cron: '0 8 1 * *' # At 08:00 on day-of-month 1.
+    - cron: '0 12 1 * *'
 
 jobs:
   build:
