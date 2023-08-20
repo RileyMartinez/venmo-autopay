@@ -5,3 +5,5 @@
 2023-08-20 13:41:41,788 - root - INFO - Venmo request successful to User ID: XXXXXXXXXXXXXXX0085
 2023-08-20 13:41:42,131 - root - INFO - Venmo request successful to User ID: XXXXXXXXXXXXXXX0085
 2023-08-20 20:45:20,994 - root - ERROR - An exception was thrown
+2023-08-20 20:58:41,296 - root - INFO - True | Venmo payment to User ID: XXXXXXXXXXXXXXX0085
+2023-08-20 20:58:42,692 - root - INFO - True | Venmo request to User ID: XXXXXXXXXXXXXXX0085
