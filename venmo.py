@@ -1,6 +1,8 @@
 from venmo_api import Client, PaymentMethod, User
 
 class Venmo:
+    client: Client
+
     def __init__(self, access_token: str) -> None:
         self.client = Client(access_token=access_token)
 
