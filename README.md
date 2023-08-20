@@ -4,9 +4,9 @@ Automate Venmo payments on a schedule using GitHub Actions:
   - Sends payments and requests via Venmo client
   - Sends success/failure email notifications via SmtpClient
   - Appends successful/failed transactions to main.log as a keep-alive for GitHub Actions
-- smtp_client.py
+- clients/smtp_client.py
   - SMTP client wrapper for sending emails
-- venmo.py
+- clients/venmo.py
   - Venmo client wrapper for sending/receiving payments
 - example.env
   - Env template for required variables and secrets
