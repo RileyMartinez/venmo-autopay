@@ -1,4 +1,4 @@
-# venmo-autopay
+# venmo-autopay [![run venmo-autopay](https://github.com/RileyMartinez/venmo-autopay/actions/workflows/actions.yml/badge.svg)](https://github.com/RileyMartinez/venmo-autopay/actions/workflows/actions.yml)
 Automate Venmo payments on a schedule using GitHub Actions:
 - main.py
   - Sends payments via Venmo client
