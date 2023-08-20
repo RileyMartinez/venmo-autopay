@@ -5,8 +5,8 @@ from typing import Union
 from dotenv import load_dotenv
 from models.payment import Payment
 from models.request import Request
-from venmo import Venmo
-from smtp_client import SmtpClient
+from clients.venmo import Venmo
+from clients.smtp_client import SmtpClient
 from datetime import datetime
 
 def main() -> None:
