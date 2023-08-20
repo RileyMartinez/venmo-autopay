@@ -50,7 +50,7 @@ def send_requests(venmo, smtp) -> None:
                 request.note,
                 request.target_user_id)
 
-        send_transaction_notification(smtp, success, request.target_user_id)
+        send_transaction_notification(smtp, success, request)
 
 def send_payments(venmo, smtp) -> None:
     payments: list[Payment] = get_payments()
@@ -62,7 +62,7 @@ def send_payments(venmo, smtp) -> None:
                 payment.target_user_id,
                 payment.funding_source_id)
 
-        send_transaction_notification(smtp, success, payment.target_user_id)
+        send_transaction_notification(smtp, success, payment)
 
 def send_error_notification(smtp: SmtpClient, e: Exception) -> bool:
     logging.error(f'An exception was thrown')
