@@ -7,3 +7,5 @@
 2023-08-20 20:45:20,994 - root - ERROR - An exception was thrown
 2023-08-20 20:58:41,296 - root - INFO - True | Venmo payment to User ID: XXXXXXXXXXXXXXX0085
 2023-08-20 20:58:42,692 - root - INFO - True | Venmo request to User ID: XXXXXXXXXXXXXXX0085
+2023-09-01 12:06:16,751 - root - INFO - True | Venmo payment to User ID: XXXXXXXXXXXXXXX3170
+2023-09-01 12:06:19,051 - root - INFO - True | Venmo request to User ID: XXXXXXXXXXXXXXX0085
