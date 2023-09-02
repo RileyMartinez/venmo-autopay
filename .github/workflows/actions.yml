@@ -52,6 +52,9 @@ jobs:
           VENMO_REQUEST_AMOUNT_1: ${{ vars.VENMO_REQUEST_AMOUNT_1 }}
           VENMO_REQUEST_NOTE_1: ${{ secrets.VENMO_REQUEST_NOTE_1 }}
           VENMO_REQUEST_USER_ID_1: ${{ vars.VENMO_REQUEST_USER_ID_1 }}
+          VENMO_REQUEST_AMOUNT_2: ${{ vars.VENMO_REQUEST_AMOUNT_2 }}
+          VENMO_REQUEST_NOTE_2: ${{ secrets.VENMO_REQUEST_NOTE_2 }}
+          VENMO_REQUEST_USER_ID_2: ${{ vars.VENMO_REQUEST_USER_ID_2 }}
           SMTP_USERNAME: ${{ vars.SMTP_USERNAME }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           SMTP_PORT: ${{ vars.SMTP_PORT }}
