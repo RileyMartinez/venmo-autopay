@@ -21,3 +21,4 @@
 2024-01-01 12:05:55,252 - root - INFO - True | Venmo payment to User ID: XXXXXXXXXXXXXXX3170
 2024-01-01 12:05:56,654 - root - INFO - True | Venmo request to User ID: XXXXXXXXXXXXXXX0085
 2024-01-01 12:05:57,735 - root - INFO - True | Venmo request to User ID: XXXXXXXXXXXXXXX0085
+2024-02-01 12:05:54,318 - root - ERROR - An exception was thrown
