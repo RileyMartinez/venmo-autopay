@@ -32,3 +32,4 @@
 2024-06-01 12:05:45,248 - root - INFO - True | Venmo payment to User ID: XXXXXXXXXXXXXXX3170
 2024-06-01 12:05:46,995 - root - INFO - True | Venmo request to User ID: XXXXXXXXXXXXXXX0085
 2024-06-01 12:05:49,076 - root - INFO - True | Venmo request to User ID: XXXXXXXXXXXXXXX0085
+2024-07-01 12:07:19,041 - root - ERROR - An exception was thrown
